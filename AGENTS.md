@@ -20,25 +20,26 @@ Follow the 5-phase iteration cycle: **Analyze -> Plan -> Specify -> Implement ->
 
 ## Operation Prompts
 
-The following operations are available as native OpenCode slash commands in `.opencode/commands/`:
+The following operations are available as native commands or workflows:
 
 - **OpenCode:** invoke with `/name` (commands in `.opencode/commands/`)
+- **Antigravity:** reference the workflow by name to invoke it (workflows in `.antigravity/workflows/`)
 
 | Operation | Purpose |
 |-----------|---------|
-| `/start-session` | Start a new session — creates iteration file and marks it as open |
-| `/end-session` | End the current session — summarizes work and closes the iteration |
-| `/resume-session` | Resume work — loads project context and picks up where you left off |
-| `/save-session` | Save session progress — updates memory.md and iteration files |
-| `/create-technical-spec` | Write a technical specification for new work |
-| `/write-tests` | Generate tests for existing or new code |
-| `/debug-issue` | Diagnose and fix a bug with structured root cause analysis |
-| `/refactor-code` | Safely restructure code without changing behavior |
-| `/review-changes` | Self-review code changes before committing |
-| `/write-commit-message` | Generate a well-structured commit message |
-| `/update-documentation` | Update docs after implementing a change |
+| `start-session` | Start a new session — creates iteration file and marks it as open |
+| `end-session` | End the current session — summarizes work and closes the iteration |
+| `resume-session` | Resume work — loads project context and picks up where you left off |
+| `save-session` | Save session progress — updates memory.md and iteration files |
+| `create-technical-spec` | Write a technical specification for new work |
+| `write-tests` | Generate tests for existing or new code |
+| `debug-issue` | Diagnose and fix a bug with structured root cause analysis |
+| `refactor-code` | Safely restructure code without changing behavior |
+| `review-changes` | Self-review code changes before committing |
+| `write-commit-message` | Generate a well-structured commit message |
+| `update-documentation` | Update docs after implementing a change |
 
-Source prompts live in `prompts/operations/`. The tool-specific files (`.opencode/commands/`) mirror these sources.
+Source prompts live in `prompts/operations/`. The tool-specific files mirror these sources.
 
 ## Rules for All Work
 
@@ -62,6 +63,6 @@ If the session **starts with a direct task** (e.g. "implement this plan") instea
 
 ### Session lifecycle
 
-Use `/start-session` at the beginning of an implementation cycle to create an iteration file and mark it as the **Open Session** in `memory.md`. While a session is open, every operation prompt (spec writing, code review, documentation, debugging, etc.) registers its contributions to the Session Log of the open iteration file. Use `/end-session` to summarize all work, close the iteration, and clear the Open Session flag.
+Use `start-session` (ou `/start-session` no OpenCode) at the beginning of an implementation cycle to create an iteration file and mark it as the **Open Session** in `memory.md`. While a session is open, every operation prompt (spec writing, code review, documentation, debugging, etc.) registers its contributions to the Session Log of the open iteration file. Use `end-session` (ou `/end-session`) to summarize all work, close the iteration, and clear the Open Session flag.
 
 If an agent instance detects an Open Session in `memory.md`, it should maintain that session — appending entries and not creating competing iterations. If asked to start a new session while one is open, the agent must ask for approval to close the existing one first.
