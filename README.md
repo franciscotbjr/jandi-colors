@@ -31,8 +31,8 @@ Esse processo é quimicamente distinto do woad europeu (*Isatis tinctoria*) e do
 
 | Nome | Hex | RGB | HSL | Referência |
 |------|-----|-----|-----|------------|
-| **Suco verde** | `#C8D5CC` | 200, 213, 204 | 138°, 12%, 81% | Polpa fresca, pré-oxidação |
-| **Brisa** | `#8FA7B3` | 143, 167, 179 | 200°, 17%, 63% | Início da oxidação atmosférica |
+| **Suco verde** | `#C8D5CC` | 200, 213, 204 | 138°, 13%, 81% | Polpa fresca, pré-oxidação |
+| **Brisa** | `#8FA7B3` | 143, 167, 179 | 200°, 19%, 63% | Início da oxidação atmosférica |
 | **Oby** | `#5D7F96` | 93, 127, 150 | 204°, 23%, 48% | Azul tupi — *oby* = azul/verde |
 | **Jandí** | `#3D5F80` | 61, 95, 128 | 210°, 35%, 37% | **Cor primária** — a tinta revelada |
 | **Genipina** | `#2C4A6E` | 44, 74, 110 | 213°, 43%, 30% | Índigo profundo, oxidação plena |

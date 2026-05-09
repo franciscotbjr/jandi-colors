@@ -1,0 +1,141 @@
+// Jandí Colors — SCSS Variables
+// Derived from the blue pigment of jenipapo (Genipa americana)
+// https://github.com/franciscotbjr/jandi-colors
+//
+// Usage:
+//   @import '@jandi/colors/scss/jandi';
+//   background: $jandi-primary;
+//   color: $jandi-text-primary;
+
+$jandi-version: "0.1.0";
+
+// ── Core palette ──
+
+$jandi-suco-verde: #C8D5CC;
+// Polpa recém-extraída do fruto verde. O geniposídeo foi liberado pela trituração,
+// mas a β-glucosidase ainda não completou a hidrólise. Nenhuma reação com proteínas occurred.
+
+$jandi-brisa: #8FA7B3;
+// Primeiro contato com o oxigênio atmosférico. A genipina livre começa a reagir
+// com aminoácidos, formando os primeiros intermediários amarelo-acinzentados.
+
+$jandi-oby: #5D7F96;
+// O azul emerge. Os cromóforos de genipina-aminoácido estão se formando
+// ativamente — a reticulação proteica está em progresso mas incompleta.
+
+$jandi-primary: #3D5F80;
+// Oxidação completa em concentração padrão. Todos os sítios de ligação genipina-proteína
+// foram ocupados. Este é o azul que os povos indígenas obtêm na primeira aplicação.
+
+$jandi-genipina: #2C4A6E;
+// Extrato concentrado com excesso de genipina livre. A proporção
+// genipina/proteína é maior que a estequiométrica.
+
+$jandi-nhandi: #1E3452;
+// Múltiplas imersões. Cada camada adiciona densidade ao pigmento
+// reticulado na epiderme.
+
+$jandi-yandi: #11203A;
+// Extrato reduzido por evaporação. O líquido foi fervido ou exposto ao sol
+// para concentrar a genipina.
+
+$jandi-tinta-guerra: #0A1424;
+// Concentração máxima ritual. Extrato reduzido ao limite, aplicado em múltiplas
+// camadas sobre pele escarificada.
+
+// ── Map for iteration ──
+
+$jandi-colors: (
+  "suco-verde": $jandi-suco-verde,
+  "brisa": $jandi-brisa,
+  "oby": $jandi-oby,
+  "primary": $jandi-primary,
+  "genipina": $jandi-genipina,
+  "nhandi": $jandi-nhandi,
+  "yandi": $jandi-yandi,
+  "tinta-guerra": $jandi-tinta-guerra,
+);
+
+// ── Semantic aliases: Background ──
+
+$jandi-bg-lightest: $jandi-suco-verde;
+$jandi-bg-light: $jandi-brisa;
+$jandi-bg-surface: $jandi-nhandi;
+$jandi-bg-base: $jandi-yandi;
+$jandi-bg-deep: $jandi-tinta-guerra;
+
+// ── Semantic aliases: Text ──
+
+$jandi-text-primary: $jandi-suco-verde;
+$jandi-text-secondary: $jandi-brisa;
+$jandi-text-muted: $jandi-oby;
+
+// ── Semantic aliases: Accent ──
+
+$jandi-accent: $jandi-primary;
+$jandi-accent-strong: $jandi-genipina;
+
+// ── Map for semantic tokens ──
+
+$jandi-bg-semantic: (
+  "lightest": $jandi-suco-verde,
+  "light": $jandi-brisa,
+  "surface": $jandi-nhandi,
+  "base": $jandi-yandi,
+  "deep": $jandi-tinta-guerra,
+);
+
+$jandi-text-semantic: (
+  "primary": $jandi-suco-verde,
+  "secondary": $jandi-brisa,
+  "muted": $jandi-oby,
+);
+
+$jandi-accent-semantic: (
+  "default": $jandi-primary,
+  "strong": $jandi-genipina,
+);
+
+// ── Alpha variants — transparency helpers ──
+
+$jandi-border: rgba(61, 95, 128, 0.2);
+$jandi-border-hover: rgba(61, 95, 128, 0.35);
+$jandi-overlay: rgba(10, 20, 36, 0.6);
+$jandi-glow: rgba(61, 95, 128, 0.15);
+
+// ── Mixins ──
+
+@mixin jandi-dark-surface {
+  background-color: $jandi-yandi;
+  color: $jandi-suco-verde;
+  border-color: $jandi-border;
+}
+
+@mixin jandi-accent {
+  background-color: $jandi-primary;
+  color: $jandi-suco-verde;
+
+  &:hover {
+    background-color: $jandi-oby;
+  }
+}
+
+@mixin jandi-light-surface {
+  background-color: $jandi-suco-verde;
+  color: $jandi-yandi;
+  border-color: $jandi-border;
+}
+
+@mixin jandi-glow($color: $jandi-primary, $alpha: 0.15) {
+  box-shadow: 0 0 calc($alpha * 1rem) rgba(red($color), green($color), blue($color), $alpha);
+}
+
+// ── Helper function to get color by slug ──
+
+@function jandi-color($name) {
+  @if map-has-key($jandi-colors, $name) {
+    @return map-get($jandi-colors, $name);
+  }
+  @warn "Unknown jandi color: #{$name}";
+  @return null;
+}
