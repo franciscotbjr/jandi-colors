@@ -1,7 +1,7 @@
 # 002 — Publicar @jandi/colors como pacote TypeScript npm
 
 - **Type:** feature
-- **Status:** open
+- **Status:** done
 - **Created:** 2026-05-09
 - **Completed:** 2026-05-09
 
@@ -82,6 +82,8 @@ Publicar `@jandi/colors` no npm registry como pacote TypeScript-first, dual ESM/
 | 2026-05-09 18:38 | review-changes | Code review performed. Critical bugs found in utils.ts (getLuminance) and palette.test.ts (HSL conversion), plus a warning for eslint.config.ts. |
 | 2026-05-09 19:35 | review-changes | Re-review performed. Correctness issues (tests/types) resolved. ESLint warnings persist and evolved into parser/env errors. |
 | 2026-05-09 19:46 | review-changes | Final re-review performed. All ESLint config and parsing errors resolved. Code review is fully clean. |
+| 2026-05-09 19:54 | write-commit-message | Generated commit message for publishing @jandi/colors as TypeScript npm package and executed commit. |
+| 2026-05-09 19:57 | save-session | Progress saved. All tests, linting, and configurations verified and committed. |
 
 ## Notes
 

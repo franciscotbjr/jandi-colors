@@ -18,11 +18,12 @@
 
 ## Active Work
 
-- [ ] Publicar @jandi/colors como pacote TypeScript npm → `history/002-npm-typescript-package.md`
+- _(none)_
 
 ## Recent Completions
 
 - [x] Stateful Spec onboarding and initial setup → `history/001-stateful-spec-onboarding.md` (2026-05-09)
+- [x] Publicar @jandi/colors como pacote TypeScript npm → `history/002-npm-typescript-package.md` (2026-05-09)
 
 ## Key Decisions
 
