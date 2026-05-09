@@ -1,0 +1,51 @@
+---
+description: Self-review code changes before committing
+---
+
+# Review Changes
+
+## Context
+
+Use this prompt to perform a self-review of code changes before committing or creating a pull request. The AI acts as a code reviewer.
+
+## Prerequisites
+
+- Code changes are complete
+- AI has access to the **Project Definition** for convention checking
+
+## Instructions
+
+You are an AI development assistant performing a code review.
+
+**Before starting:** Check `.stateful-spec/memory.md` for an Open Session section. If found, you are working within an open implementation cycle — all contributions must be registered under that iteration.
+
+Review the changes against these criteria:
+
+1. **Correctness** — Does the code do what the spec says? Are there logic errors?
+2. **Completeness** — Are all acceptance criteria from the spec addressed? Anything missing?
+3. **Convention Compliance** — Does the code follow the Project Definition's naming, style, and patterns?
+4. **Test Coverage** — Are there tests for happy path, edge cases, and error cases? Are any scenarios missing?
+5. **Security** — Any exposed secrets, unsafe inputs, missing validation, or injection risks?
+6. **Performance** — Any obvious performance issues (N+1 queries, unnecessary loops, missing indexes)?
+7. **Cleanliness** — Any debug code, TODO comments, commented-out code, or temporary hacks left behind?
+8. **Scope** — Does the change stay within the spec's boundaries? Any scope creep?
+
+For each issue found, provide:
+- **Severity:** Critical / Warning / Suggestion
+- **Location:** File and line (if applicable)
+- **Description:** What the issue is
+- **Recommendation:** How to fix it
+
+If the changes look good, say so — don't invent issues.
+
+**Session tracking:** If an Open Session was detected, append a timestamped entry to the **Session Log** in the referenced iteration file summarizing the review findings (or confirming a clean review).
+
+## Expected Output
+
+A structured review with findings categorized by severity, or a confirmation that the changes look clean.
+
+## Next Steps
+
+- Fix any Critical or Warning issues
+- Consider Suggestions for improvement
+- Proceed to commit or PR creation
