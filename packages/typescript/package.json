@@ -1,0 +1,70 @@
+{
+  "name": "@jandi/colors",
+  "version": "0.1.0",
+  "description": "Color palette derived from the blue pigment of jenipapo (Genipa americana)",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./css": "./css/jandi.css",
+    "./scss": "./scss/_jandi.scss",
+    "./json": "./json/jandi.tokens.json",
+    "./tailwind": "./tailwind/jandi.config.cjs"
+  },
+  "files": [
+    "dist/",
+    "css/",
+    "scss/",
+    "json/",
+    "tailwind/"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "eslint .",
+    "format": "prettier --check .",
+    "format:fix": "prettier --write .",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build && npm test"
+  },
+  "keywords": [
+    "colors",
+    "palette",
+    "design-tokens",
+    "css",
+    "tailwind",
+    "jenipapo",
+    "genipina",
+    "indigenous",
+    "brazil",
+    "blue",
+    "pigment"
+  ],
+  "license": "MIT",
+  "author": "Francisco Tarcizo Bomfim Junior (Chico)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/franciscotbjr/jandi-colors.git"
+  },
+  "homepage": "https://github.com/franciscotbjr/jandi-colors",
+  "devDependencies": {
+    "@types/node": "^25.6.2",
+    "@typescript-eslint/eslint-plugin": "^8.0.0",
+    "@typescript-eslint/parser": "^8.0.0",
+    "eslint": "^9.0.0",
+    "prettier": "^3.0.0",
+    "tsup": "^8.3.0",
+    "typescript": "^5.8.0",
+    "typescript-eslint": "^8.59.2",
+    "vitest": "^3.0.0"
+  }
+}

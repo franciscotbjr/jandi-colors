@@ -3,4 +3,5 @@ node_modules/
 *.log
 dist/
 .env
-promp.md
+prompt.md
+plan.md

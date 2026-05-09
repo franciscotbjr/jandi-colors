@@ -1,0 +1,137 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "jandi": {
+    "$description": "Color palette derived from the blue pigment of jenipapo (Genipa americana)",
+    "suco-verde": {
+      "$value": "#C8D5CC",
+      "$type": "color",
+      "$description": "Polpa recém-extraída do fruto verde. O geniposídeo foi liberado pela trituração, mas a β-glucosidase ainda não completou a hidrólise.",
+      "extensions": {
+        "com.jandi": {
+          "oxidationStage": "pre",
+          "rgb": [200, 213, 204],
+          "hsl": [138, 13, 81],
+          "name": "Suco verde",
+          "slug": "jandi-suco-verde"
+        }
+      }
+    },
+    "brisa": {
+      "$value": "#8FA7B3",
+      "$type": "color",
+      "$description": "Primeiro contato com o oxigênio atmosférico. A genipina livre começa a reagir com aminoácidos.",
+      "extensions": {
+        "com.jandi": {
+          "oxidationStage": "initial",
+          "rgb": [143, 167, 179],
+          "hsl": [200, 19, 63],
+          "name": "Brisa",
+          "slug": "jandi-brisa"
+        }
+      }
+    },
+    "oby": {
+      "$value": "#5D7F96",
+      "$type": "color",
+      "$description": "O azul emerge. Os cromóforos de genipina-aminoácido estão se formando ativamente.",
+      "extensions": {
+        "com.jandi": {
+          "oxidationStage": "partial",
+          "rgb": [93, 127, 150],
+          "hsl": [204, 23, 48],
+          "name": "Oby",
+          "slug": "jandi-oby"
+        }
+      }
+    },
+    "primary": {
+      "$value": "#3D5F80",
+      "$type": "color",
+      "$description": "Oxidação completa em concentração padrão. Este é o azul que os povos indígenas obtêm na primeira aplicação.",
+      "extensions": {
+        "com.jandi": {
+          "oxidationStage": "full",
+          "rgb": [61, 95, 128],
+          "hsl": [210, 35, 37],
+          "name": "Jandí",
+          "slug": "jandi-primary"
+        }
+      }
+    },
+    "genipina": {
+      "$value": "#2C4A6E",
+      "$type": "color",
+      "$description": "Extrato concentrado com excesso de genipina livre.",
+      "extensions": {
+        "com.jandi": {
+          "oxidationStage": "saturated",
+          "rgb": [44, 74, 110],
+          "hsl": [213, 43, 30],
+          "name": "Genipina",
+          "slug": "jandi-genipina"
+        }
+      }
+    },
+    "nhandi": {
+      "$value": "#1E3452",
+      "$type": "color",
+      "$description": "Múltiplas imersões. Cada camada adiciona densidade ao pigmento reticulado.",
+      "extensions": {
+        "com.jandi": {
+          "oxidationStage": "deep",
+          "rgb": [30, 52, 82],
+          "hsl": [215, 46, 22],
+          "name": "Nhandí",
+          "slug": "jandi-nhandi"
+        }
+      }
+    },
+    "yandi": {
+      "$value": "#11203A",
+      "$type": "color",
+      "$description": "Extrato reduzido por evaporação. O líquido foi fervido para concentrar a genipina.",
+      "extensions": {
+        "com.jandi": {
+          "oxidationStage": "concentrated",
+          "rgb": [17, 32, 58],
+          "hsl": [218, 55, 15],
+          "name": "Yandí",
+          "slug": "jandi-yandi"
+        }
+      }
+    },
+    "tinta-guerra": {
+      "$value": "#0A1424",
+      "$type": "color",
+      "$description": "Concentração máxima ritual. Extrato reduzido ao limite.",
+      "extensions": {
+        "com.jandi": {
+          "oxidationStage": "max",
+          "rgb": [10, 20, 36],
+          "hsl": [217, 57, 9],
+          "name": "Tinta de guerra",
+          "slug": "jandi-tinta-guerra"
+        }
+      }
+    }
+  },
+  "semantic": {
+    "$description": "Semantic tokens for common use cases",
+    "background": {
+      "lightest": { "$value": "{jandi.suco-verde}", "$type": "color" },
+      "light": { "$value": "{jandi.brisa}", "$type": "color" },
+      "surface": { "$value": "{jandi.nhandi}", "$type": "color" },
+      "base": { "$value": "{jandi.yandi}", "$type": "color" },
+      "deep": { "$value": "{jandi.tinta-guerra}", "$type": "color" }
+    },
+    "text": {
+      "primary": { "$value": "{jandi.suco-verde}", "$type": "color" },
+      "secondary": { "$value": "{jandi.brisa}", "$type": "color" },
+      "muted": { "$value": "{jandi.oby}", "$type": "color" }
+    },
+    "accent": {
+      "default": { "$value": "{jandi.primary}", "$type": "color" },
+      "strong": { "$value": "{jandi.genipina}", "$type": "color" }
+    }
+  }
+}

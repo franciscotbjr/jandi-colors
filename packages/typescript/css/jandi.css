@@ -1,0 +1,73 @@
+/*
+ * Jandí Colors — CSS Custom Properties
+ * Derived from the blue pigment of jenipapo (Genipa americana)
+ * https://github.com/franciscotbjr/jandi-colors
+ *
+ * Usage:
+ *   @import '@jandi/colors/css/jandi.css';
+ *   or
+ *   <link rel="stylesheet" href="https://unpkg.com/@jandi/colors/css/jandi.css">
+ *
+ * Then use: var(--jandi-primary), var(--jandi-bg-surface), etc.
+ */
+
+:root {
+  /* ── Core palette ── */
+  /* Polpa recém-extraída do fruto verde. O geniposídeo foi liberado pela trituração,
+      mas a β-glucosidase ainda não completou a hidrólise. Nenhuma reação com proteínas occurred. */
+  --jandi-suco-verde: #C8D5CC;
+
+  /* Primeiro contato com o oxigênio atmosférico. A genipina livre começa a reagir
+      com aminoácidos, formando os primeiros intermediários amarelo-acinzentados. */
+  --jandi-brisa: #8FA7B3;
+
+  /* O azul emerge. Os cromóforos de genipina-aminoácido estão se formando
+      ativamente — a reticulação proteica está em progresso mas incompleta. */
+  --jandi-oby: #5D7F96;
+
+  /* Oxidação completa em concentração padrão. Todos os sítios de ligação genipina-proteína
+      foram ocupados. Este é o azul que os povos indígenas obtêm na primeira aplicação. */
+  --jandi-primary: #3D5F80;
+
+  /* Extrato concentrado com excesso de genipina livre. A proporção
+      genipina/proteína é maior que a estequiométrica. */
+  --jandi-genipina: #2C4A6E;
+
+  /* Múltiplas imersões. Cada camada adiciona densidade ao pigmento
+      reticulado na epiderme. */
+  --jandi-nhandi: #1E3452;
+
+  /* Extrato reduzido por evaporação. O líquido foi fervido ou exposto ao sol
+      para concentrar a genipina. */
+  --jandi-yandi: #11203A;
+
+  /* Concentração máxima ritual. Extrato reduzido ao limite, aplicado em múltiplas
+      camadas sobre pele escarificada. */
+  --jandi-tinta-guerra: #0A1424;
+
+  /* ── Semantic aliases: Background ── */
+  --jandi-bg-lightest: var(--jandi-suco-verde);
+  --jandi-bg-light: var(--jandi-brisa);
+  --jandi-bg-surface: var(--jandi-nhandi);
+  --jandi-bg-base: var(--jandi-yandi);
+  --jandi-bg-deep: var(--jandi-tinta-guerra);
+
+  /* ── Semantic aliases: Text ── */
+  --jandi-text-primary: var(--jandi-suco-verde);
+  --jandi-text-secondary: var(--jandi-brisa);
+  --jandi-text-muted: var(--jandi-oby);
+
+  /* ── Semantic aliases: Accent ── */
+  --jandi-accent: var(--jandi-primary);
+  --jandi-accent-strong: var(--jandi-genipina);
+
+  /* ── Alpha variants — transparency helpers ── */
+  /* Border at 20% opacity */
+  --jandi-border: rgba(61, 95, 128, 0.2);
+  /* Border hover at 35% opacity */
+  --jandi-border-hover: rgba(61, 95, 128, 0.35);
+  /* Overlay at 60% opacity (for modals, dialogs) */
+  --jandi-overlay: rgba(10, 20, 36, 0.6);
+  /* Glow effect at 15% opacity */
+  --jandi-glow: rgba(61, 95, 128, 0.15);
+}

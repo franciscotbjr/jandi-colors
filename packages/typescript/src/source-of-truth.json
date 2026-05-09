@@ -1,0 +1,13 @@
+{
+  "version": "0.1.0",
+  "colors": {
+    "suco-verde": "#C8D5CC",
+    "brisa": "#8FA7B3",
+    "oby": "#5D7F96",
+    "primary": "#3D5F80",
+    "genipina": "#2C4A6E",
+    "nhandi": "#1E3452",
+    "yandi": "#11203A",
+    "tinta-guerra": "#0A1424"
+  }
+}
