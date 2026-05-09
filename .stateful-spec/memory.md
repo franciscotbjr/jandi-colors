@@ -52,7 +52,7 @@
 | # | Name | Status | Date |
 |---|------|--------|------|
 | 001 | Stateful Spec onboarding | done | 2026-05-09 |
-| 002 | Publicar @jandi/colors como pacote TypeScript npm | open | 2026-05-09 |
+| 002 | Publicar @jandi/colors como pacote TypeScript npm | done | 2026-05-09 |
 
 ## Project Structure (after v0.1.0)
 
