@@ -1,0 +1,36 @@
+/*
+ * Jandí Colors — CSS Custom Properties
+ * Derived from the blue pigment of jenipapo (Genipa americana)
+ * https://github.com/franciscotbjr/jandi-colors
+ */
+
+:root {
+  /* ── Core palette ── */
+  --jandi-suco-verde:    #C8D5CC;
+  --jandi-brisa:         #8FA7B3;
+  --jandi-oby:           #5D7F96;
+  --jandi-primary:       #3D5F80;
+  --jandi-genipina:      #2C4A6E;
+  --jandi-nhandi:        #1E3452;
+  --jandi-yandi:         #11203A;
+  --jandi-tinta-guerra:  #0A1424;
+
+  /* ── Semantic aliases ── */
+  --jandi-bg-lightest:   var(--jandi-suco-verde);
+  --jandi-bg-light:      var(--jandi-brisa);
+  --jandi-bg-surface:    var(--jandi-nhandi);
+  --jandi-bg-base:       var(--jandi-yandi);
+  --jandi-bg-deep:       var(--jandi-tinta-guerra);
+
+  --jandi-text-primary:  var(--jandi-suco-verde);
+  --jandi-text-secondary: var(--jandi-brisa);
+  --jandi-text-muted:    var(--jandi-oby);
+  --jandi-accent:        var(--jandi-primary);
+  --jandi-accent-strong: var(--jandi-genipina);
+
+  /* ── Alpha variants ── */
+  --jandi-border:        rgba(61, 95, 128, 0.2);
+  --jandi-border-hover:  rgba(61, 95, 128, 0.35);
+  --jandi-overlay:       rgba(10, 20, 36, 0.6);
+  --jandi-glow:          rgba(61, 95, 128, 0.15);
+}

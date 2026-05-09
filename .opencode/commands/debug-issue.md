@@ -1,0 +1,49 @@
+---
+description: Diagnose and fix a bug with structured root cause analysis
+---
+
+# Debug Issue
+
+## Context
+
+Use this prompt when you encounter a bug or unexpected behavior and need AI assistance to diagnose and fix it.
+
+## Prerequisites
+
+- AI has access to the **Project Definition**
+- You can describe the problem (error message, unexpected behavior, failing test)
+
+## Instructions
+
+You are an AI development assistant helping diagnose and fix a bug.
+
+**Before starting:** Check `.stateful-spec/memory.md` for an Open Session section. If found, you are working within an open implementation cycle — all contributions must be registered under that iteration.
+
+1. Analyze the error and the relevant code
+2. Identify the most likely root cause — explain your reasoning
+3. If you're not certain, list the top 2-3 possible causes ranked by likelihood
+4. For each possible cause, suggest a diagnostic step (a log statement, a test, a check) to confirm or eliminate it
+5. Once the root cause is identified, propose a minimal fix
+6. The fix should:
+   - Address the root cause, not just the symptom
+   - Be as small as possible — prefer single-line changes when sufficient
+   - Not introduce new issues
+7. Suggest a regression test that would catch this bug in the future
+
+Do NOT make broad changes or refactor during debugging. Focus on understanding and fixing the specific issue.
+
+**Session tracking:** If an Open Session was detected, append a timestamped entry to the **Session Log** in the referenced iteration file summarizing the root cause and fix.
+
+## Expected Output
+
+1. Root cause analysis with reasoning
+2. Diagnostic steps (if cause is uncertain)
+3. Minimal fix with explanation
+4. Suggested regression test
+
+## Next Steps
+
+- Verify the root cause with the suggested diagnostic steps
+- Apply the fix
+- Add the regression test
+- Run quality gates to confirm nothing else broke

@@ -1,0 +1,64 @@
+{
+  "$schema": "https://design-tokens.github.io/community-group/format/",
+  "jandi": {
+    "$description": "Color palette derived from the blue pigment of jenipapo (Genipa americana)",
+    "suco-verde": {
+      "$value": "#C8D5CC",
+      "$type": "color",
+      "$description": "Pre-oxidation — fresh pulp extract"
+    },
+    "brisa": {
+      "$value": "#8FA7B3",
+      "$type": "color",
+      "$description": "Light oxidation — first atmospheric contact"
+    },
+    "oby": {
+      "$value": "#5D7F96",
+      "$type": "color",
+      "$description": "Tupi blue — oby means blue/green in Tupi"
+    },
+    "primary": {
+      "$value": "#3D5F80",
+      "$type": "color",
+      "$description": "Primary — the revealed dye"
+    },
+    "genipina": {
+      "$value": "#2C4A6E",
+      "$type": "color",
+      "$description": "Deep indigo — full oxidation of genipin (C₁₁H₁₄O₅)"
+    },
+    "nhandi": {
+      "$value": "#1E3452",
+      "$type": "color",
+      "$description": "Night blue — multiple immersions"
+    },
+    "yandi": {
+      "$value": "#11203A",
+      "$type": "color",
+      "$description": "Near-black — high concentration extract"
+    },
+    "tinta-guerra": {
+      "$value": "#0A1424",
+      "$type": "color",
+      "$description": "War paint — maximum ritual concentration"
+    }
+  },
+  "semantic": {
+    "background": {
+      "lightest": { "$value": "{jandi.suco-verde}", "$type": "color" },
+      "light":    { "$value": "{jandi.brisa}", "$type": "color" },
+      "surface":  { "$value": "{jandi.nhandi}", "$type": "color" },
+      "base":     { "$value": "{jandi.yandi}", "$type": "color" },
+      "deep":     { "$value": "{jandi.tinta-guerra}", "$type": "color" }
+    },
+    "text": {
+      "primary":   { "$value": "{jandi.suco-verde}", "$type": "color" },
+      "secondary": { "$value": "{jandi.brisa}", "$type": "color" },
+      "muted":     { "$value": "{jandi.oby}", "$type": "color" }
+    },
+    "accent": {
+      "default": { "$value": "{jandi.primary}", "$type": "color" },
+      "strong":  { "$value": "{jandi.genipina}", "$type": "color" }
+    }
+  }
+}

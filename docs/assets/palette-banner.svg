@@ -1,0 +1,28 @@
+<svg viewBox="0 0 680 120" xmlns="http://www.w3.org/2000/svg">
+  <rect x="0" y="0" width="85" height="80" rx="4" fill="#C8D5CC"/>
+  <rect x="85" y="0" width="85" height="80" fill="#8FA7B3"/>
+  <rect x="170" y="0" width="85" height="80" fill="#5D7F96"/>
+  <rect x="255" y="0" width="85" height="80" fill="#3D5F80"/>
+  <rect x="340" y="0" width="85" height="80" fill="#2C4A6E"/>
+  <rect x="425" y="0" width="85" height="80" fill="#1E3452"/>
+  <rect x="510" y="0" width="85" height="80" fill="#11203A"/>
+  <rect x="595" y="0" width="85" height="80" rx="4" fill="#0A1424"/>
+
+  <text x="42" y="100" text-anchor="middle" font-family="monospace" font-size="9" fill="#5D7F96">suco verde</text>
+  <text x="127" y="100" text-anchor="middle" font-family="monospace" font-size="9" fill="#5D7F96">brisa</text>
+  <text x="212" y="100" text-anchor="middle" font-family="monospace" font-size="9" fill="#5D7F96">oby</text>
+  <text x="297" y="100" text-anchor="middle" font-family="monospace" font-size="9" fill="#3D5F80" font-weight="bold">jandí</text>
+  <text x="382" y="100" text-anchor="middle" font-family="monospace" font-size="9" fill="#5D7F96">genipina</text>
+  <text x="467" y="100" text-anchor="middle" font-family="monospace" font-size="9" fill="#5D7F96">nhandí</text>
+  <text x="552" y="100" text-anchor="middle" font-family="monospace" font-size="9" fill="#5D7F96">yandí</text>
+  <text x="637" y="100" text-anchor="middle" font-family="monospace" font-size="8" fill="#5D7F96">tinta guerra</text>
+
+  <text x="42" y="112" text-anchor="middle" font-family="monospace" font-size="8" fill="#8FA7B3">#C8D5CC</text>
+  <text x="127" y="112" text-anchor="middle" font-family="monospace" font-size="8" fill="#8FA7B3">#8FA7B3</text>
+  <text x="212" y="112" text-anchor="middle" font-family="monospace" font-size="8" fill="#8FA7B3">#5D7F96</text>
+  <text x="297" y="112" text-anchor="middle" font-family="monospace" font-size="8" fill="#8FA7B3">#3D5F80</text>
+  <text x="382" y="112" text-anchor="middle" font-family="monospace" font-size="8" fill="#8FA7B3">#2C4A6E</text>
+  <text x="467" y="112" text-anchor="middle" font-family="monospace" font-size="8" fill="#8FA7B3">#1E3452</text>
+  <text x="552" y="112" text-anchor="middle" font-family="monospace" font-size="8" fill="#8FA7B3">#11203A</text>
+  <text x="637" y="112" text-anchor="middle" font-family="monospace" font-size="8" fill="#8FA7B3">#0A1424</text>
+</svg>
