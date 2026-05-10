@@ -74,3 +74,4 @@ Publicar `jandi-colors` no crates.io como crate Rust `#![no_std]`, zero-dependen
 | 2026-05-10 | create-technical-spec | Removed redundant #![warn(missing_docs)] — deny implies warn. |
 | 2026-05-10 | create-technical-spec | Expanded section 4.11 (README do crate) to mirror packages/typescript/README.md with full structural parity: 16 sections including title, badges, install, palette table, API examples, feature flags, utilities, accessibility, tests, structure, other ecosystems, license, footer. |
 | 2026-05-10 | write-commit-message | Generated commit: "docs: add session log entries for test strategy and Rust best practices" and executed commit. |
+| 2026-05-10 | write-commit-message | Generated commit: "docs: add session log entries for README parity and lint cleanup" and executed commit. |
