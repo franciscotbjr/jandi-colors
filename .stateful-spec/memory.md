@@ -14,11 +14,11 @@
 
 ## Open Session
 
-- Currently open: `history/002-npm-typescript-package.md`
+- Currently open: `history/003-rust-cratesio-package.md`
 
 ## Active Work
 
-- _(none)_
+- [ ] Publicar jandi-colors como crate Rust (crates.io) → `history/003-rust-cratesio-package.md`
 
 ## Recent Completions
 
@@ -53,6 +53,7 @@
 |---|------|--------|------|
 | 001 | Stateful Spec onboarding | done | 2026-05-09 |
 | 002 | Publicar @jandi/colors como pacote TypeScript npm | done | 2026-05-09 |
+| 003 | Publicar jandi-colors como crate Rust (crates.io) | in-progress | 2026-05-10 |
 
 ## Project Structure (after v0.1.0)
 
