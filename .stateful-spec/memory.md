@@ -14,7 +14,7 @@
 
 ## Open Session
 
-- Currently open: `history/003-rust-cratesio-package.md`
+*(none)*
 
 ## Active Work
 
