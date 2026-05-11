@@ -80,9 +80,9 @@ impl<'de> serde::de::Visitor<'de> for JandiColorVisitor {
             }
         }
         let slug = slug.ok_or_else(|| serde::de::Error::missing_field("slug"))?;
-        by_slug(slug)
-            .copied()
-            .ok_or_else(|| serde::de::Error::custom(format_args!("unknown slug: {slug}")))
+        by_slug(slug).copied().ok_or_else(|| {
+            serde::de::Error::custom("provided slug does not match any palette color")
+        })
     }
 }
 

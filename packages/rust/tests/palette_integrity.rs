@@ -1,15 +1,18 @@
 use jandi_colors::*;
 
-fn parse_hex(hex: &str) -> (u8, u8, u8) {
+fn parse_hex(hex: &str) -> Result<(u8, u8, u8), String> {
     let hex = hex.trim_start_matches('#');
-    let r = u8::from_str_radix(&hex[0..2], 16).unwrap();
-    let g = u8::from_str_radix(&hex[2..4], 16).unwrap();
-    let b = u8::from_str_radix(&hex[4..6], 16).unwrap();
-    (r, g, b)
+    if hex.len() != 6 {
+        return Err(format!("expected 6 chars after #, got {}", hex.len()));
+    }
+    let r = u8::from_str_radix(&hex[0..2], 16).map_err(|e| e.to_string())?;
+    let g = u8::from_str_radix(&hex[2..4], 16).map_err(|e| e.to_string())?;
+    let b = u8::from_str_radix(&hex[4..6], 16).map_err(|e| e.to_string())?;
+    Ok((r, g, b))
 }
 
 fn hex_to_hsl(hex: &str) -> (u16, u8, u8) {
-    let (r, g, b) = parse_hex(hex);
+    let (r, g, b) = parse_hex(hex).expect("PALETTE hex values are valid");
     let rf = r as f32 / 255.0;
     let gf = g as f32 / 255.0;
     let bf = b as f32 / 255.0;
@@ -81,7 +84,7 @@ fn test_all_names_unique() {
 #[test]
 fn test_hex_rgb_consistency() {
     for color in PALETTE.iter() {
-        let (r, g, b) = parse_hex(color.hex);
+        let (r, g, b) = parse_hex(color.hex).expect("PALETTE hex values are valid");
         assert_eq!(r, color.rgb.r, "hex RGB mismatch for {}", color.slug);
         assert_eq!(g, color.rgb.g, "hex RGB mismatch for {}", color.slug);
         assert_eq!(b, color.rgb.b, "hex RGB mismatch for {}", color.slug);
