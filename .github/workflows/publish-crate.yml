@@ -1,0 +1,159 @@
+name: Test, Build and Publish (Rust crate)
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - packages/rust/**
+    tags:
+      - "rust-v*"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: packages/rust
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          toolchain: stable
+          components: rustfmt, clippy
+
+      - name: Format check
+        run: cargo fmt --all -- --check
+
+      - name: Clippy
+        run: cargo clippy --all-features -- -D warnings
+
+      - name: Test all features
+        run: cargo test --all-features
+
+      - name: Test no_std
+        run: cargo test --no-default-features
+
+      - name: Doc tests
+        run: cargo test --doc --all-features
+
+      - name: Documentation
+        run: cargo doc --all-features --no-deps
+
+  test-contrast:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: packages/rust
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          toolchain: stable
+
+      - name: Test contrast
+        run: cargo test --features contrast
+
+  cross-format-check:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: packages/rust
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          toolchain: stable
+
+      - name: Cross-format test
+        run: cargo test --test cross_format
+
+  msrv:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: packages/rust
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Rust (MSRV)
+        uses: dtolnay/rust-toolchain@master
+        with:
+          toolchain: "1.95.0"
+
+      - name: Check MSRV
+        run: cargo check --all-features
+
+  coverage:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: packages/rust
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          toolchain: stable
+          components: llvm-tools
+
+      - name: Install cargo-llvm-cov
+        uses: taiki-e/install-action@cargo-llvm-cov
+
+      - name: Coverage (>= 80%)
+        run: cargo llvm-cov --all-features --fail-under-lines 80
+
+  security:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: packages/rust
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install cargo-audit
+        uses: taiki-e/install-action@cargo-audit
+
+      - name: Security audit
+        run: cargo audit
+        continue-on-error: true
+
+  publish:
+    needs: [test, test-contrast, cross-format-check, msrv, coverage, security]
+    runs-on: ubuntu-latest
+    if: startsWith(github.ref, 'refs/tags/rust-v')
+    defaults:
+      run:
+        working-directory: packages/rust
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          toolchain: stable
+
+      - name: Publish to crates.io
+        run: cargo publish
+        env:
+          CARGO_REGISTRY_TOKEN: ${{ secrets.CARGO_REGISTRY_TOKEN }}

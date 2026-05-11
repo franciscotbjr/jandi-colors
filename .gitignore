@@ -5,3 +5,10 @@ dist/
 .env
 prompt.md
 plan.md
+
+# Rust / Cargo
+packages/rust/target
+packages/rust/**/*.lock
+packages/rust/**/*.rs.bk
+packages/rust/*.pdb
+packages/rust/mutants.out*/
