@@ -7,53 +7,53 @@
 //   background: $jandi-primary;
 //   color: $jandi-text-primary;
 
-$jandi-version: "0.1.0";
+$jandi-version: '0.1.0';
 
 // ── Core palette ──
 
-$jandi-suco-verde: #C8D5CC;
+$jandi-suco-verde: #c8d5cc;
 // Polpa recém-extraída do fruto verde. O geniposídeo foi liberado pela trituração,
 // mas a β-glucosidase ainda não completou a hidrólise. Nenhuma reação com proteínas occurred.
 
-$jandi-brisa: #8FA7B3;
+$jandi-brisa: #8fa7b3;
 // Primeiro contato com o oxigênio atmosférico. A genipina livre começa a reagir
 // com aminoácidos, formando os primeiros intermediários amarelo-acinzentados.
 
-$jandi-oby: #5D7F96;
+$jandi-oby: #5d7f96;
 // O azul emerge. Os cromóforos de genipina-aminoácido estão se formando
 // ativamente — a reticulação proteica está em progresso mas incompleta.
 
-$jandi-primary: #3D5F80;
+$jandi-primary: #3d5f80;
 // Oxidação completa em concentração padrão. Todos os sítios de ligação genipina-proteína
 // foram ocupados. Este é o azul que os povos indígenas obtêm na primeira aplicação.
 
-$jandi-genipina: #2C4A6E;
+$jandi-genipina: #2c4a6e;
 // Extrato concentrado com excesso de genipina livre. A proporção
 // genipina/proteína é maior que a estequiométrica.
 
-$jandi-nhandi: #1E3452;
+$jandi-nhandi: #1e3452;
 // Múltiplas imersões. Cada camada adiciona densidade ao pigmento
 // reticulado na epiderme.
 
-$jandi-yandi: #11203A;
+$jandi-yandi: #11203a;
 // Extrato reduzido por evaporação. O líquido foi fervido ou exposto ao sol
 // para concentrar a genipina.
 
-$jandi-tinta-guerra: #0A1424;
+$jandi-tinta-guerra: #0a1424;
 // Concentração máxima ritual. Extrato reduzido ao limite, aplicado em múltiplas
 // camadas sobre pele escarificada.
 
 // ── Map for iteration ──
 
 $jandi-colors: (
-  "suco-verde": $jandi-suco-verde,
-  "brisa": $jandi-brisa,
-  "oby": $jandi-oby,
-  "primary": $jandi-primary,
-  "genipina": $jandi-genipina,
-  "nhandi": $jandi-nhandi,
-  "yandi": $jandi-yandi,
-  "tinta-guerra": $jandi-tinta-guerra,
+  'suco-verde': $jandi-suco-verde,
+  'brisa': $jandi-brisa,
+  'oby': $jandi-oby,
+  'primary': $jandi-primary,
+  'genipina': $jandi-genipina,
+  'nhandi': $jandi-nhandi,
+  'yandi': $jandi-yandi,
+  'tinta-guerra': $jandi-tinta-guerra,
 );
 
 // ── Semantic aliases: Background ──
@@ -78,22 +78,22 @@ $jandi-accent-strong: $jandi-genipina;
 // ── Map for semantic tokens ──
 
 $jandi-bg-semantic: (
-  "lightest": $jandi-suco-verde,
-  "light": $jandi-brisa,
-  "surface": $jandi-nhandi,
-  "base": $jandi-yandi,
-  "deep": $jandi-tinta-guerra,
+  'lightest': $jandi-suco-verde,
+  'light': $jandi-brisa,
+  'surface': $jandi-nhandi,
+  'base': $jandi-yandi,
+  'deep': $jandi-tinta-guerra,
 );
 
 $jandi-text-semantic: (
-  "primary": $jandi-suco-verde,
-  "secondary": $jandi-brisa,
-  "muted": $jandi-oby,
+  'primary': $jandi-suco-verde,
+  'secondary': $jandi-brisa,
+  'muted': $jandi-oby,
 );
 
 $jandi-accent-semantic: (
-  "default": $jandi-primary,
-  "strong": $jandi-genipina,
+  'default': $jandi-primary,
+  'strong': $jandi-genipina,
 );
 
 // ── Alpha variants — transparency helpers ──

@@ -16,9 +16,14 @@
 
 *(none)*
 
+## Open Session
+
+- **Iteration:** 004 — Security audit remediation (Phase 4 — Implement)
+- **Started:** 2026-05-11
+
 ## Active Work
 
-- [x] Publicar jandi-colors como crate Rust (crates.io) → `history/003-rust-cratesio-package.md`
+- [ ] Security audit remediation — TypeScript (npm) → `history/004-security-audit-remediation.md`
 
 ## Recent Completions
 
@@ -56,7 +61,8 @@
 |---|------|--------|------|
 | 001 | Stateful Spec onboarding | done | 2026-05-09 |
 | 002 | Publicar @jandi/colors como pacote TypeScript npm | done | 2026-05-09 |
-| 003 | Publicar jandi-colors como crate Rust (crates.io) | in-progress | 2026-05-10 |
+| 003 | Publicar jandi-colors como crate Rust (crates.io) | done | 2026-05-10 |
+| 004 | Security audit remediation — TypeScript (npm) | in-progress | 2026-05-11 |
 
 ## Project Structure (after v0.1.0)
 

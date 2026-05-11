@@ -1,25 +1,29 @@
-import { describe, it, expect } from "vitest"
-import { palette } from "../src/palette"
+import { describe, it, expect } from 'vitest'
+import { palette } from '../src/palette'
+import { getContrastPair } from '../src/utils'
 
 const wcagCombos = [
-  { fg: "jandi-suco-verde", bg: "jandi-yandi", level: "AAA" },
-  { fg: "jandi-suco-verde", bg: "jandi-nhandi", level: "AAA" },
-  { fg: "jandi-suco-verde", bg: "jandi-genipina", level: "AA" },
-  { fg: "jandi-brisa", bg: "jandi-tinta-guerra", level: "AAA" },
-  { fg: "jandi-brisa", bg: "jandi-yandi", level: "AA" },
-  { fg: "jandi-suco-verde", bg: "jandi-tinta-guerra", level: "AAA" },
-  { fg: "jandi-brisa", bg: "jandi-tinta-guerra", level: "AAA" },
+  { fg: 'jandi-suco-verde', bg: 'jandi-yandi', level: 'AAA' },
+  { fg: 'jandi-suco-verde', bg: 'jandi-nhandi', level: 'AAA' },
+  { fg: 'jandi-suco-verde', bg: 'jandi-genipina', level: 'AA' },
+  { fg: 'jandi-brisa', bg: 'jandi-tinta-guerra', level: 'AAA' },
+  { fg: 'jandi-brisa', bg: 'jandi-yandi', level: 'AA' },
+  { fg: 'jandi-suco-verde', bg: 'jandi-tinta-guerra', level: 'AAA' },
+  { fg: 'jandi-brisa', bg: 'jandi-tinta-guerra', level: 'AAA' },
 ]
 
 function getLuminance(rgb: { r: number; g: number; b: number }): number {
-  const [r, g, b] = [rgb.r, rgb.g, rgb.b].map((c) => {
+  const [r, g, b] = [rgb.r, rgb.g, rgb.b].map(c => {
     c = c / 255
     return c <= 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4)
   })
   return 0.2126 * r + 0.7152 * g + 0.0722 * b
 }
 
-function getContrastRatio(fg: { r: number; g: number; b: number }, bg: { r: number; g: number; b: number }): number {
+function getContrastRatio(
+  fg: { r: number; g: number; b: number },
+  bg: { r: number; g: number; b: number },
+): number {
   const l1 = getLuminance(fg)
   const l2 = getLuminance(bg)
   const lighter = Math.max(l1, l2)
@@ -27,7 +31,7 @@ function getContrastRatio(fg: { r: number; g: number; b: number }, bg: { r: numb
   return (lighter + 0.05) / (darker + 0.05)
 }
 
-describe("WCAG contrast combinations from README", () => {
+describe('WCAG contrast combinations from README', () => {
   for (const { fg, bg, level } of wcagCombos) {
     const fgColor = palette.bySlug[fg]
     const bgColor = palette.bySlug[bg]
@@ -38,30 +42,48 @@ describe("WCAG contrast combinations from README", () => {
       }
 
       const ratio = getContrastRatio(fgColor.rgb, bgColor.rgb)
-      const minRatio = level === "AAA" ? 7 : 4.5
+      const minRatio = level === 'AAA' ? 7 : 4.5
 
       expect(ratio).toBeGreaterThanOrEqual(minRatio)
     })
   }
 
-  it("oby on suco-verde does not meet AA (2.8:1)", () => {
-    const fg = palette.bySlug["jandi-oby"]
-    const bg = palette.bySlug["jandi-suco-verde"]
+  it('oby on suco-verde does not meet AA (2.8:1)', () => {
+    const fg = palette.bySlug['jandi-oby']
+    const bg = palette.bySlug['jandi-suco-verde']
     const ratio = getContrastRatio(fg.rgb, bg.rgb)
     expect(ratio).toBeLessThan(4.5)
   })
 
-  it("suco-verde on primary does not meet AA (4.4:1)", () => {
-    const fg = palette.bySlug["jandi-suco-verde"]
-    const bg = palette.bySlug["jandi-primary"]
+  it('suco-verde on primary does not meet AA (4.4:1)', () => {
+    const fg = palette.bySlug['jandi-suco-verde']
+    const bg = palette.bySlug['jandi-primary']
     const ratio = getContrastRatio(fg.rgb, bg.rgb)
     expect(ratio).toBeLessThan(4.5)
   })
 
-  it("oby on tinta-guerra does not meet AA (4.3:1)", () => {
-    const fg = palette.bySlug["jandi-oby"]
-    const bg = palette.bySlug["jandi-tinta-guerra"]
+  it('oby on tinta-guerra does not meet AA (4.3:1)', () => {
+    const fg = palette.bySlug['jandi-oby']
+    const bg = palette.bySlug['jandi-tinta-guerra']
     const ratio = getContrastRatio(fg.rgb, bg.rgb)
     expect(ratio).toBeLessThan(4.5)
+  })
+})
+
+describe('getContrastPair', () => {
+  it('returns pairs, not flat colors', () => {
+    const pairs = getContrastPair(palette)
+    expect(Array.isArray(pairs)).toBe(true)
+    for (const pair of pairs) {
+      expect(Array.isArray(pair)).toBe(true)
+      expect(pair).toHaveLength(2)
+      expect(pair[0]).toHaveProperty('hex')
+      expect(pair[1]).toHaveProperty('hex')
+    }
+  })
+
+  it('produces C(8,2) = 28 unique pairs max', () => {
+    const pairs = getContrastPair(palette)
+    expect(pairs.length).toBeLessThanOrEqual(28)
   })
 })

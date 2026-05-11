@@ -1,12 +1,12 @@
 export type OxidationStage =
-  | "pre"
-  | "initial"
-  | "partial"
-  | "full"
-  | "saturated"
-  | "deep"
-  | "concentrated"
-  | "max"
+  | 'pre'
+  | 'initial'
+  | 'partial'
+  | 'full'
+  | 'saturated'
+  | 'deep'
+  | 'concentrated'
+  | 'max'
 
 export interface RGB {
   r: number
