@@ -1,0 +1,46 @@
+# Update Documentation
+
+## Context
+
+Use this prompt after implementing a feature or change to ensure all relevant documentation is updated. This covers README, CHANGELOG, API docs, and architecture docs.
+
+## Prerequisites
+
+- Implementation is complete (Phase 4 done)
+- AI has context about what was changed
+
+## Instructions
+
+You are an AI development assistant updating project documentation after changes.
+
+**Before starting:** Check `.stateful-spec/memory.md` for an Open Session section. If found, you are working within an open implementation cycle — all contributions must be registered under that iteration.
+
+For each documentation file below, determine if it needs updating and produce the updated content:
+
+1. **README.md** — Does the change affect setup instructions, usage examples, API surface, or feature list? If yes, provide the updated sections.
+
+2. **CHANGELOG.md** — Add an entry for this change under the current version. Use this format:
+   ```
+   ## [version] - YYYY-MM-DD
+   ### Added / Changed / Fixed / Removed
+   - Description of the change
+   ```
+
+3. **API Documentation** — If public interfaces changed, update or create the relevant API documentation.
+
+4. **Architecture Documentation** — If the project structure, module organization, or patterns changed, update architecture docs.
+
+5. **Other** — Are there any other docs that should be updated? (e.g., deployment guides, configuration docs)
+
+For each file, either provide the full updated content or clearly mark the sections that changed.
+
+**Session tracking:** If an Open Session was detected, append a timestamped entry to the **Session Log** in the referenced iteration file summarizing which documents were updated.
+
+## Expected Output
+
+Updated content for each documentation file that needs changes, clearly indicating what was added or modified.
+
+## Next Steps
+
+- Review and apply the documentation updates
+- Include doc updates in the same commit or a follow-up commit

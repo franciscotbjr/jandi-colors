@@ -107,20 +107,20 @@ module.exports = {
 
 ## Acessibilidade
 
-Combinações que atendem WCAG 2.1 AA (contraste ≥ 4.5:1 para texto normal):
+Combinações de contraste WCAG 2.1 (ratios verificados via `cargo test --features contrast`):
 
 | Fundo | Texto | Ratio | Nível |
 |-------|-------|-------|-------|
-| Suco verde | Yandí | 10.2:1 | AAA |
-| Suco verde | Nhandí | 7.1:1 | AAA |
-| Suco verde | Genipina | 5.2:1 | AA |
-| Brisa | Tinta de guerra | 11.8:1 | AAA |
-| Brisa | Yandí | 8.9:1 | AAA |
-| Oby | Suco verde | 4.6:1 | AA |
-| Jandí | Suco verde | 5.8:1 | AA |
-| Tinta de guerra | Suco verde | 14.2:1 | AAA |
-| Tinta de guerra | Brisa | 10.1:1 | AAA |
-| Tinta de guerra | Oby | 6.3:1 | AA |
+| Suco verde | Yandí | 10.7:1 | AAA |
+| Suco verde | Nhandí | 8.3:1 | AAA |
+| Suco verde | Genipina | 6.0:1 | AA |
+| Brisa | Tinta de guerra | 7.3:1 | AAA |
+| Tinta de guerra | Suco verde | 12.2:1 | AAA |
+| Tinta de guerra | Brisa | 7.3:1 | AAA |
+| Brisa | Yandí | 6.5:1 | AA |
+| Jandí | Suco verde | 4.4:1 | AA Large |
+| Tinta de guerra | Oby | 4.3:1 | AA Large |
+| Oby | Suco verde | 2.8:1 | — |
 
 ## Tokens disponíveis
 

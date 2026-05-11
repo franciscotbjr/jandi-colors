@@ -22,6 +22,7 @@ Follow the 5-phase iteration cycle: **Analyze -> Plan -> Specify -> Implement ->
 
 The following operations are available as native commands or workflows:
 
+- **Claude Code:** invoke with `/project:name` (commands in `.claude/commands/`)
 - **OpenCode:** invoke with `/name` (commands in `.opencode/commands/`)
 - **Antigravity:** reference the workflow by name to invoke it (workflows in `.antigravity/workflows/`)
 
@@ -63,6 +64,11 @@ If the session **starts with a direct task** (e.g. "implement this plan") instea
 
 ### Session lifecycle
 
-Use `start-session` (ou `/start-session` no OpenCode) at the beginning of an implementation cycle to create an iteration file and mark it as the **Open Session** in `memory.md`. While a session is open, every operation prompt (spec writing, code review, documentation, debugging, etc.) registers its contributions to the Session Log of the open iteration file. Use `end-session` (ou `/end-session`) to summarize all work, close the iteration, and clear the Open Session flag.
+Use `start-session` at the beginning of an implementation cycle to create an iteration file and mark it as the **Open Session** in `memory.md`:
+- **Claude Code:** `/project:start-session`
+- **OpenCode:** `/start-session`
+- **Antigravity:** `start-session` workflow
+
+While a session is open, every operation prompt (spec writing, code review, documentation, debugging, etc.) registers its contributions to the Session Log of the open iteration file. Use `end-session` to summarize all work, close the iteration, and clear the Open Session flag (use the corresponding syntax above).
 
 If an agent instance detects an Open Session in `memory.md`, it should maintain that session — appending entries and not creating competing iterations. If asked to start a new session while one is open, the agent must ask for approval to close the existing one first.
