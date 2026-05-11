@@ -1,9 +1,10 @@
-import type { JandiColor, JandiPalette, RGB, HSL } from "./types"
+import type { JandiColor, JandiPalette, RGB, HSL } from './types'
 
 export function hexToRgb(hex: string): RGB {
   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex)
   if (!result) {
-    throw new Error(`Invalid hex color: ${hex}`)
+    const safe = typeof hex === 'string' ? hex.slice(0, 32).replace(/[^\w#]/g, '?') : '<non-string>'
+    throw new Error(`Invalid hex color format: ${safe}`)
   }
   return {
     r: parseInt(result[1], 16),
@@ -52,7 +53,7 @@ export function isLight(color: JandiColor): boolean {
 }
 
 function getLuminance(rgb: RGB): number {
-  const [r, g, b] = [rgb.r, rgb.g, rgb.b].map((c) => {
+  const [r, g, b] = [rgb.r, rgb.g, rgb.b].map(c => {
     c = c / 255
     return c <= 0.03928 ? c / 12.92 : Math.pow((c + 0.055) / 1.055, 2.4)
   })
@@ -67,21 +68,19 @@ function getContrastRatio(rgb1: RGB, rgb2: RGB): number {
   return (lighter + 0.05) / (darker + 0.05)
 }
 
-export function getContrastPair(palette: JandiPalette): JandiColor[] {
-  const validPairs: JandiColor[] = []
+export function getContrastPair(palette: JandiPalette): [JandiColor, JandiColor][] {
+  const validPairs: [JandiColor, JandiColor][] = []
   const colors = palette.colors
 
   for (let i = 0; i < colors.length; i++) {
-    for (let j = 0; j < colors.length; j++) {
-      if (i === j) continue
+    for (let j = i + 1; j < colors.length; j++) {
       const ratio = getContrastRatio(colors[i].rgb, colors[j].rgb)
       if (ratio >= 4.5) {
-        validPairs.push(colors[i], colors[j])
+        validPairs.push([colors[i], colors[j]])
       }
     }
   }
-
-  return [...new Set(validPairs)]
+  return validPairs
 }
 
 export function toCSS(color: JandiColor): string {
@@ -89,6 +88,9 @@ export function toCSS(color: JandiColor): string {
 }
 
 export function toRGBA(color: JandiColor, alpha: number): string {
+  if (typeof alpha !== 'number' || !Number.isFinite(alpha) || alpha < 0 || alpha > 1) {
+    throw new Error('Invalid alpha value: must be a finite number between 0 and 1')
+  }
   const { r, g, b } = color.rgb
   return `rgba(${r}, ${g}, ${b}, ${alpha})`
 }

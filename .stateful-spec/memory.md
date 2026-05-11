@@ -18,13 +18,14 @@
 
 ## Active Work
 
-- [x] Publicar jandi-colors como crate Rust (crates.io) → `history/003-rust-cratesio-package.md`
+*(none)*
 
 ## Recent Completions
 
 - [x] Stateful Spec onboarding and initial setup → `history/001-stateful-spec-onboarding.md` (2026-05-09)
 - [x] Publicar @jandi/colors como pacote TypeScript npm → `history/002-npm-typescript-package.md` (2026-05-09)
 - [x] Publicar jandi-colors como crate Rust (crates.io) → `history/003-rust-cratesio-package.md` (2026-05-10)
+- [x] Security audit remediation — TypeScript (npm) → `history/004-security-audit-remediation.md` (2026-05-11)
 
 ## Key Decisions
 
@@ -56,7 +57,8 @@
 |---|------|--------|------|
 | 001 | Stateful Spec onboarding | done | 2026-05-09 |
 | 002 | Publicar @jandi/colors como pacote TypeScript npm | done | 2026-05-09 |
-| 003 | Publicar jandi-colors como crate Rust (crates.io) | in-progress | 2026-05-10 |
+| 003 | Publicar jandi-colors como crate Rust (crates.io) | done | 2026-05-10 |
+| 004 | Security audit remediation — TypeScript (npm) | done | 2026-05-11 |
 
 ## Project Structure (after v0.1.0)
 
