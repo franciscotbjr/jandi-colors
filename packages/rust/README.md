@@ -30,7 +30,7 @@ Eight tones derived from the real behavior of genipin pigment, from fresh green 
 | **Yandí** | `#11203A` | 17, 32, 58 | 218°, 55%, 15% | Concentrated |
 | **Tinta de guerra** | `#0A1424` | 10, 20, 36 | 217°, 57%, 9% | Max |
 
-## Basic API (zero dependencies)
+## Usage
 
 ```rust
 use jandi_colors::*;
@@ -205,9 +205,9 @@ packages/rust/
 
 This palette is also available as:
 
-- **npm:** [`@jandi/colors`](https://www.npmjs.com/package/@jandi/colors) — JavaScript/TypeScript
-- **CSS/SCSS/JSON/Tailwind** — Design tokens for web projects
-- **Swift/Kotlin** — Tokens for native mobile applications
+- **npm:** [`@jandi/colors`](https://www.npmjs.com/package/@jandi/colors) — JavaScript/TypeScript ([package README](../typescript/README.md))
+- **CSS/SCSS/JSON/Tailwind** — Design tokens for web projects (bundled with the npm package)
+- **Swift/Kotlin** — Raw token files at [`tokens/swift/`](../../tokens/swift/) and [`tokens/kotlin/`](../../tokens/kotlin/)
 
 See the [monorepo root](https://github.com/franciscotbjr/jandi-colors) for all available formats.
 

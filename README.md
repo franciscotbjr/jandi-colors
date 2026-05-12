@@ -59,13 +59,15 @@ npm install @jandi/colors
 ```
 
 ```js
-import { colors, jandi, oby, genipina } from '@jandi/colors'
+import { palette, jandi, oby, genipina } from '@jandi/colors'
 ```
+
+> Veja o [README do pacote TypeScript](packages/typescript/README.md) para API completa, utilitários e testes.
 
 ### CSS
 
 ```html
-<link rel="stylesheet" href="https://unpkg.com/@jandi/colors/tokens/css/jandi.css">
+<link rel="stylesheet" href="https://unpkg.com/@jandi/colors/css/jandi.css">
 ```
 
 ```css
@@ -97,13 +99,32 @@ module.exports = {
 ### SCSS
 
 ```scss
-@import '@jandi/colors/tokens/scss/jandi';
+@import '@jandi/colors/scss';
 
 .element {
   background: $jandi-primary;
   color: $jandi-oby;
 }
 ```
+
+### Rust
+
+```bash
+cargo add jandi-colors
+```
+
+```rust
+use jandi_colors::*;
+
+println!("{}", PRIMARY);        // "Jandí (#3D5F80)"
+println!("{}", JANDI.hex);      // "#3D5F80"
+
+for color in PALETTE {
+    println!("{} - {}", color.name, color.hex);
+}
+```
+
+> Veja o [README do pacote Rust](packages/rust/README.md) para API completa, feature flags e integrações com frameworks (ratatui, iced, bevy, egui, crossterm, palette, serde).
 
 ## Acessibilidade
 
@@ -122,18 +143,14 @@ Combinações de contraste WCAG 2.1 (ratios verificados via `cargo test --featur
 | Tinta de guerra | Oby | 4.3:1 | AA Large |
 | Oby | Suco verde | 2.8:1 | — |
 
-## Tokens disponíveis
+## Ecossistemas
 
-```
-tokens/
-├── css/jandi.css              # CSS custom properties
-├── scss/_jandi.scss           # SCSS variables + mixin
-├── json/jandi.tokens.json     # Design Tokens (W3C format)
-├── tailwind/jandi.config.js   # Tailwind plugin
-├── swift/JandiColors.swift    # SwiftUI / UIKit
-├── kotlin/JandiColors.kt     # Jetpack Compose / Android
-└── rust/jandi.rs              # Rust const
-```
+| Ecossistema | Pacote | Instalação |
+|------------|--------|------------|
+| JavaScript/TypeScript | [`@jandi/colors`](packages/typescript/README.md) | `npm install @jandi/colors` |
+| Rust | [`jandi-colors`](packages/rust/README.md) | `cargo add jandi-colors` |
+
+Cada pacote inclui múltiplos formatos: CSS, SCSS, JSON (W3C), Tailwind (TypeScript) — feature flags para ratatui, iced, bevy, egui, crossterm, palette, serde (Rust).
 
 ## Correspondência Pantone (aproximada)
 
