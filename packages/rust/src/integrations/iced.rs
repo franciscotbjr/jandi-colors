@@ -16,8 +16,14 @@ impl From<&JandiColor> for iced_core::Color {
 mod tests {
     use crate::PRIMARY;
     #[test]
-    fn test_iced_conversion() {
+    fn test_iced_conversion_owned() {
         let color: iced_core::Color = PRIMARY.into();
+        assert_eq!(color, iced_core::Color::from_rgb8(61, 95, 128));
+    }
+
+    #[test]
+    fn test_iced_conversion_borrowed() {
+        let color: iced_core::Color = (&PRIMARY).into();
         assert_eq!(color, iced_core::Color::from_rgb8(61, 95, 128));
     }
 }

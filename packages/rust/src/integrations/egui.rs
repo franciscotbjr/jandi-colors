@@ -16,8 +16,14 @@ impl From<&JandiColor> for egui::Color32 {
 mod tests {
     use crate::PRIMARY;
     #[test]
-    fn test_egui_conversion() {
+    fn test_egui_conversion_owned() {
         let color: egui::Color32 = PRIMARY.into();
+        assert_eq!(color, egui::Color32::from_rgb(61, 95, 128));
+    }
+
+    #[test]
+    fn test_egui_conversion_borrowed() {
+        let color: egui::Color32 = (&PRIMARY).into();
         assert_eq!(color, egui::Color32::from_rgb(61, 95, 128));
     }
 }

@@ -25,7 +25,7 @@ fn parse_ts_palette(source: &str) -> Vec<TsColor> {
         .filter(|b| b.contains("JandiColor"))
         .collect();
 
-    let re_str = Regex::new(r#""([^"]+)""#).unwrap();
+    let re_str = Regex::new(r#"['"]([^'"]+)['"]"#).unwrap();
     let re_rgb = Regex::new(r"r:\s*(\d+),\s*g:\s*(\d+),\s*b:\s*(\d+)").unwrap();
     let re_hsl = Regex::new(r"h:\s*(\d+),\s*s:\s*(\d+),\s*l:\s*(\d+)").unwrap();
 
@@ -48,18 +48,18 @@ fn parse_ts_palette(source: &str) -> Vec<TsColor> {
             continue;
         };
 
-        let rgb = re_rgb.captures(block).map(|c| {
-            let r = c.get(1).unwrap().as_str().parse::<u8>().unwrap();
-            let g = c.get(2).unwrap().as_str().parse::<u8>().unwrap();
-            let b = c.get(3).unwrap().as_str().parse::<u8>().unwrap();
-            (r, g, b)
+        let rgb = re_rgb.captures(block).and_then(|c| {
+            let r = c.get(1)?.as_str().parse::<u8>().ok()?;
+            let g = c.get(2)?.as_str().parse::<u8>().ok()?;
+            let b = c.get(3)?.as_str().parse::<u8>().ok()?;
+            Some((r, g, b))
         });
 
-        let hsl = re_hsl.captures(block).map(|c| {
-            let h = c.get(1).unwrap().as_str().parse::<u16>().unwrap();
-            let s = c.get(2).unwrap().as_str().parse::<u8>().unwrap();
-            let l = c.get(3).unwrap().as_str().parse::<u8>().unwrap();
-            (h, s, l)
+        let hsl = re_hsl.captures(block).and_then(|c| {
+            let h = c.get(1)?.as_str().parse::<u16>().ok()?;
+            let s = c.get(2)?.as_str().parse::<u8>().ok()?;
+            let l = c.get(3)?.as_str().parse::<u8>().ok()?;
+            Some((h, s, l))
         });
 
         if let (Some((r, g, b)), Some((h, s, l))) = (rgb, hsl) {
