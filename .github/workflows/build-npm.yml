@@ -11,6 +11,15 @@ on:
       - 'bug/**'
       - 'issue/**'
       - 'fix/**'
+  pull_request:
+    paths:
+      - packages/typescript/**
+    branches:
+      - 'feature/**'
+      - 'release/**'
+      - 'bug/**'
+      - 'issue/**'
+      - 'fix/**'
 
 jobs:
   test:
