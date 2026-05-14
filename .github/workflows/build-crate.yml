@@ -11,6 +11,15 @@ on:
       - 'bug/**'
       - 'issue/**'
       - 'fix/**'
+  pull_request:
+    paths:
+      - packages/rust/**
+    branches:
+      - 'feature/**'
+      - 'release/**'
+      - 'bug/**'
+      - 'issue/**'
+      - 'fix/**'
 
 env:
   CARGO_TERM_COLOR: always
