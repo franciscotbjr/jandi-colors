@@ -17,4 +17,4 @@ packages/rust/**/*.rs.bk
 packages/rust/*.pdb
 packages/rust/mutants.out*/
 publish.sh
-packages/typescript/package-lock.json
+
