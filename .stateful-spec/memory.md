@@ -18,7 +18,7 @@
 
 ## Active Work
 
-*(none)*
+- [ ] Fix npm build cache (GitHub Actions) → `history/007-fix-npm-build-cache.md`
 
 ## Recent Completions
 
@@ -63,6 +63,7 @@
 | 004 | Security audit remediation — TypeScript (npm) | done | 2026-05-11 |
 | 005 | Security audit remediation — Rust crate | done | 2026-05-11 |
 | 006 | Adicionar referência Rust ao README.md raiz | done | 2026-05-11 |
+| 007 | Fix npm build cache (GitHub Actions) | in-progress | 2026-06-12 |
 
 ## Project Structure (after v0.1.0)
 
