@@ -15,15 +15,15 @@ O workflow `build-npm.yml` falha no GitHub Actions com erro "Some specified path
 
 ## Acceptance Criteria
 
-- [ ] `package-lock.json` removido do `.gitignore`
-- [ ] `package-lock.json` gerado e commitado no repositório
-- [ ] `build-npm.yml` deve encontrar o `cache-dependency-path` após checkout
+- [x] `package-lock.json` removido do `.gitignore`
+- [x] `package-lock.json` gerado e commitado no repositório
+- [x] `build-npm.yml` deve encontrar o `cache-dependency-path` após checkout
 
 ## Implementation Tasks
 
-- [ ] Remover linha `packages/typescript/package-lock.json` do `.gitignore`
-- [ ] Executar `npm install` em `packages/typescript/` para gerar o lockfile
-- [ ] Verificar que `package-lock.json` foi criado
+- [x] Remover linha `packages/typescript/package-lock.json` do `.gitignore`
+- [x] Executar `npm install` em `packages/typescript/` para gerar o lockfile
+- [x] Verificar que `package-lock.json` foi criado
 
 ## Decisions
 
@@ -37,3 +37,5 @@ O workflow `build-npm.yml` falha no GitHub Actions com erro "Some specified path
 |-----------|-----------|---------|
 | 2026-06-12 | analyze | Identified root cause: package-lock.json in .gitignore prevents cache resolution and npm ci |
 | 2026-06-12 | plan | 3-step fix: remove from gitignore, npm install, commit lockfile |
+| 2026-06-12 | implement | Removed `packages/typescript/package-lock.json` from `.gitignore`; ran `npm install` → generated lockfile (124 KB, 196 packages, 0 vulnerabilities) |
+| 2026-06-12 | verify | Confirmed `package-lock.json` exists; committed as `8503906` |
