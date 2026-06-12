@@ -18,7 +18,7 @@
 
 ## Active Work
 
-- [ ] Fix npm build cache (GitHub Actions) → `history/007-fix-npm-build-cache.md`
+*(none)*
 
 ## Recent Completions
 
@@ -28,6 +28,7 @@
 - [x] Security audit remediation — TypeScript (npm) → `history/004-security-audit-remediation.md` (2026-05-11)
 - [x] Security audit remediation — Rust crate (crates.io) → `history/005-rust-security-audit.md` (2026-05-11)
 - [x] Adicionar referência Rust ao README.md raiz + correções nos READMEs internos → `history/006-readme-rust-reference.md` (2026-05-11)
+- [x] Fix npm build cache (GitHub Actions) → `history/007-fix-npm-build-cache.md` (2026-06-12)
 
 ## Key Decisions
 
@@ -63,7 +64,7 @@
 | 004 | Security audit remediation — TypeScript (npm) | done | 2026-05-11 |
 | 005 | Security audit remediation — Rust crate | done | 2026-05-11 |
 | 006 | Adicionar referência Rust ao README.md raiz | done | 2026-05-11 |
-| 007 | Fix npm build cache (GitHub Actions) | in-progress | 2026-06-12 |
+| 007 | Fix npm build cache (GitHub Actions) | done | 2026-06-12 |
 
 ## Project Structure (after v0.1.0)
 

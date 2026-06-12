@@ -1,8 +1,9 @@
 # 007 — Fix npm build cache (GitHub Actions)
 
 - **Type:** bugfix
-- **Status:** in-progress
+- **Status:** done
 - **Created:** 2026-06-12
+- **Completed:** 2026-06-12
 
 ## Description
 
